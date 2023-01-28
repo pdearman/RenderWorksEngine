@@ -13,7 +13,7 @@ namespace RWE
 
 	void RWEApp::Run()
 	{
-		printf("RenderWorks Engine has started.");
+		printf("RenderWorks Engine has started!");
 		while (true);
 	}
 }
