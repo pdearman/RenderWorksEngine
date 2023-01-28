@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\RWE\Log.h" />
     <ClInclude Include="source\RenderWorksEngine.h" />
     <ClInclude Include="source\RWE\RWEApp.h" />
     <ClInclude Include="source\RWE\Core.h" />
     <ClInclude Include="source\RWE\Entry.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\RWE\Log.cpp" />
     <ClCompile Include="source\RWE\RWEApp.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -68,6 +70,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RWE_PLATFORM_WINDOWS;RWE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)RenderWorksEngine\tplibs\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,6 +85,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RWE_PLATFORM_WINDOWS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)RenderWorksEngine\tplibs\spdlog\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -27,9 +27,15 @@
     <ClInclude Include="source\RWE\Entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\RWE\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\RWE\RWEApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RWE\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

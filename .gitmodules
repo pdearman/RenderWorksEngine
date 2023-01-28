@@ -1,0 +1,3 @@
+[submodule "RenderWorksEngine/tplibs/spdlog"]
+	path = RenderWorksEngine/tplibs/spdlog
+	url = https://github.com/gabime/spdlog
