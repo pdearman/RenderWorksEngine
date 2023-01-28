@@ -18,15 +18,18 @@
     <ClInclude Include="source\RWE\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\RWE\Application.h">
+    <ClInclude Include="source\RWE\RWEApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\RenderWorksEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\RWE\Entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\RWE\Application.cpp">
+    <ClCompile Include="source\RWE\RWEApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

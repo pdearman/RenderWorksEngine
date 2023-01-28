@@ -12,11 +12,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\RenderWorksEngine.h" />
-    <ClInclude Include="source\RWE\Application.h" />
+    <ClInclude Include="source\RWE\RWEApp.h" />
     <ClInclude Include="source\RWE\Core.h" />
+    <ClInclude Include="source\RWE\Entry.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\RWE\Application.cpp" />
+    <ClCompile Include="source\RWE\RWEApp.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

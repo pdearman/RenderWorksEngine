@@ -1,25 +1,21 @@
 #include <RenderWorksEngine.h>
 
-class RWEGame : public RWE::Application {
-public:
-	RWEGame()
+	class RWEGame : public RWE::RWEApp {
+	public:
+		RWEGame()
+		{
+
+		}
+
+		~RWEGame()
+		{
+
+		}
+
+
+	};
+
+	RWE::RWEApp* RWE::CreateRWEApp()
 	{
-
+		return new RWEGame();
 	}
-
-	~RWEGame()
-	{
-
-	}
-
-
-};
-
-int main()
-{
-	RWEGame* RWEGame_Running = new RWEGame();
-	RWEGame_Running->Run();
-	delete RWEGame_Running;
-
-	return 0;
-}
