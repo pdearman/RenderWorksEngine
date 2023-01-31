@@ -4,6 +4,9 @@
     <Filter Include="RWE">
       <UniqueIdentifier>{331B880B-9F24-887C-28A0-9E7C94A8937C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="RWE\Events">
+      <UniqueIdentifier>{B7CF8E90-A387-D0DD-0C8F-A939F8656BCE}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\RWE\Core.h">
@@ -11,6 +14,18 @@
     </ClInclude>
     <ClInclude Include="source\RWE\Entry.h">
       <Filter>RWE</Filter>
+    </ClInclude>
+    <ClInclude Include="source\RWE\Events\ApplicationEvent.h">
+      <Filter>RWE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="source\RWE\Events\Event.h">
+      <Filter>RWE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="source\RWE\Events\KeyEvent.h">
+      <Filter>RWE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="source\RWE\Events\MouseEvent.h">
+      <Filter>RWE\Events</Filter>
     </ClInclude>
     <ClInclude Include="source\RWE\Log.h">
       <Filter>RWE</Filter>

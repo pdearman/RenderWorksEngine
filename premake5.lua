@@ -26,6 +26,7 @@ workspace "RenderWorksEngine"
 
 		includedirs
 		{
+			"%{prj.name}/source",
 			"%{prj.name}/tplibs/spdlog/include",
 		}
 
