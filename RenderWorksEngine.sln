@@ -1,31 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.33027.164
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RWEGame", "RWEGame\RWEGame.vcxproj", "{8DAA18CC-5909-4CD9-8163-E4892E965849}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RWEGame", "RWEGame\RWEGame.vcxproj", "{AD16E17B-19F6-5F17-220E-EBED8E6CC678}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RenderWorksEngine", "RenderWorksEngine\RenderWorksEngine.vcxproj", "{73BF2C5A-26A7-46AE-891B-7324B9931799}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RenderWorksEngine", "RenderWorksEngine\RenderWorksEngine.vcxproj", "{519706AC-BDAD-0442-0625-9063727AD5C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
+		Dist|x64 = Dist|x64
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{73BF2C5A-26A7-46AE-891B-7324B9931799}.Debug|x64.ActiveCfg = Debug|x64
-		{73BF2C5A-26A7-46AE-891B-7324B9931799}.Debug|x64.Build.0 = Debug|x64
-		{73BF2C5A-26A7-46AE-891B-7324B9931799}.Release|x64.ActiveCfg = Release|x64
-		{73BF2C5A-26A7-46AE-891B-7324B9931799}.Release|x64.Build.0 = Release|x64
-		{8DAA18CC-5909-4CD9-8163-E4892E965849}.Debug|x64.ActiveCfg = Debug|x64
-		{8DAA18CC-5909-4CD9-8163-E4892E965849}.Debug|x64.Build.0 = Debug|x64
-		{8DAA18CC-5909-4CD9-8163-E4892E965849}.Release|x64.ActiveCfg = Release|x64
-		{8DAA18CC-5909-4CD9-8163-E4892E965849}.Release|x64.Build.0 = Release|x64
+		{AD16E17B-19F6-5F17-220E-EBED8E6CC678}.Debug|x64.ActiveCfg = Debug|x64
+		{AD16E17B-19F6-5F17-220E-EBED8E6CC678}.Debug|x64.Build.0 = Debug|x64
+		{AD16E17B-19F6-5F17-220E-EBED8E6CC678}.Dist|x64.ActiveCfg = Dist|x64
+		{AD16E17B-19F6-5F17-220E-EBED8E6CC678}.Dist|x64.Build.0 = Dist|x64
+		{AD16E17B-19F6-5F17-220E-EBED8E6CC678}.Release|x64.ActiveCfg = Release|x64
+		{AD16E17B-19F6-5F17-220E-EBED8E6CC678}.Release|x64.Build.0 = Release|x64
+		{519706AC-BDAD-0442-0625-9063727AD5C9}.Debug|x64.ActiveCfg = Debug|x64
+		{519706AC-BDAD-0442-0625-9063727AD5C9}.Debug|x64.Build.0 = Debug|x64
+		{519706AC-BDAD-0442-0625-9063727AD5C9}.Dist|x64.ActiveCfg = Dist|x64
+		{519706AC-BDAD-0442-0625-9063727AD5C9}.Dist|x64.Build.0 = Dist|x64
+		{519706AC-BDAD-0442-0625-9063727AD5C9}.Release|x64.ActiveCfg = Release|x64
+		{519706AC-BDAD-0442-0625-9063727AD5C9}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B1FE4BC3-3675-4909-B44E-5DD47CF946C7}
 	EndGlobalSection
 EndGlobal
