@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace RWE
 {
 	class RWE_API KeyEvent : public Event

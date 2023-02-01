@@ -2,9 +2,6 @@
 
 #include "RWE/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace RWE
 {
 	enum class EventType
@@ -34,9 +31,14 @@ namespace RWE
 
 	class RWE_API Event
 	{
-		friend class EventDispatcher;
+		//friend class EventDispatcher;
 	
 	public:
+
+		virtual ~Event() = default;
+
+		bool Handled = false;
+
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
@@ -48,25 +50,28 @@ namespace RWE
 		}
 	
 	protected:
-		bool m_Handled = false;
+		//bool m_Handled = false;
 	};
 
 	class EventDispatcher
 	{
-		template<typename T>
-		using EventFn = std::function<bool(T&)>;
+		//template<typename T>
+		//using EventFn = std::function<bool(T&)>;
 
 	public:
 		EventDispatcher(Event& event) : m_Event(event)
 		{
 		}
 
-		template<typename T>
-		bool Dispatch(EventFn<T> func)
+		//template<typename T>
+		template<typename T, typename F>
+		//bool Dispatch(EventFn<T> func)
+		bool Dispatch(const F& func)
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				//m_Event.m_handle = func(*(T*)&m_Event);    //// ORIGINAL LINE
+				m_Event.Handled = func(static_cast<T&>(m_Event));
 				return true;
 			}
 			return false;

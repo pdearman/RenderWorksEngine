@@ -10,6 +10,12 @@ workspace "RenderWorksEngine"
 
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+	-- Include directories relative to root folder (solution directory)
+	IncludeDir = {}
+	IncludeDir["glfw"] = "RenderWorksEngine/tplibs/glfw/include"
+
+	include "RenderWorksEngine/tplibs/glfw"
+
 	project "RenderWorksEngine"
 		location "RenderWorksEngine"
 		kind "SharedLib"
@@ -17,6 +23,9 @@ workspace "RenderWorksEngine"
 
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 		objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+		pchheader "rwepch.h"
+		pchsource "RenderWorksEngine/source/rwepch.cpp"
 
 		files
 		{
@@ -28,6 +37,13 @@ workspace "RenderWorksEngine"
 		{
 			"%{prj.name}/source",
 			"%{prj.name}/tplibs/spdlog/include",
+			"%{IncludeDir.glfw}",
+		}
+
+		links
+		{
+			"glfw",
+			"opengl32.lib",
 		}
 
 		filter "system:windows"
@@ -53,8 +69,10 @@ workspace "RenderWorksEngine"
 				"RWE_DEBUG",
 				"_DEBUG",
 				"_CONSOLE",
+				"RWE_ENABLE_ASSERTS",
 			}
-			symbols "On"
+			runtime "Debug"
+			symbols "on"
 
 		filter "configurations:Release"
 			defines
@@ -63,7 +81,8 @@ workspace "RenderWorksEngine"
 				"NDEBUG",
 				"_CONSOLE",
 			}
-			optimize "On"
+			runtime "Release"
+			optimize "on"
 
 		filter "configurations:Dist"
 			defines
@@ -72,7 +91,8 @@ workspace "RenderWorksEngine"
 				"NDEBUG",
 				--"_CONSOLE",
 			}
-			optimize "On"
+			runtime "Release"
+			optimize "on"
 
 		--[[filters { "system:windows", "configurations:release" }
 			buildoptions "/MT"]]--

@@ -10,10 +10,31 @@
 	#error RWE currently only runs on Windows.
 #endif
 
+#ifdef RWE_ENABLE_ASSERTS
+	#define RWE_ASSERT(x, ...) { if(!(x)) { RWE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define RWE_CORE_ASSERT(x, ...) { if(!(x)) { RWE_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define RWE_ASSERT(x, ...)
+	#define RWE_CORE_ASSERT(x, ...)
+#endif
+
 #define BIT(x) (1 << x)
 
+namespace RWE
+{
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+	template<typename T, typename ... Args>
+	constexpr Scope<T> CreateScope(Args&& ... args)
+	{
+		return std::make_unique<T>(std::forward<Args>(args)...);
+	}
 
-/////////////////////////////////////
-// TEMPORARY INCLUDES ///////////////
-/////////////////////////////////////
-#include <stdio.h>
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+	template<typename T, typename ... Args>
+	constexpr Ref<T> CreateRef(Args&& ... args)
+	{
+		return std::make_shared<T>(std::forward<Args>(args)...);
+	}
+}

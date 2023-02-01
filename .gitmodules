@@ -1,3 +1,6 @@
 [submodule "RenderWorksEngine/tplibs/spdlog"]
 	path = RenderWorksEngine/tplibs/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "RenderWorksEngine/tplibs/glfw"]
+	path = RenderWorksEngine/tplibs/glfw
+	url = https://github.com/pdearman/glfw

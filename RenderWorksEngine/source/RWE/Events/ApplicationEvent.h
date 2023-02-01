@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace RWE
 {
 	class RWE_API WindowResizeEvent : public Event
@@ -30,6 +28,7 @@ namespace RWE
 
 	class RWE_API WindowCloseEvent : public Event
 	{
+	public:
 		WindowCloseEvent() {}
 
 		EVENT_CLASS_TYPE(WindowClose)
