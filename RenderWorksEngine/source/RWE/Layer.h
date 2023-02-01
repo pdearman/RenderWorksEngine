@@ -5,7 +5,7 @@
 
 namespace RWE
 {
-	class Layer
+	class RWE_API Layer
 	{
 	public:
 		Layer(const std::string& name = "Layer");

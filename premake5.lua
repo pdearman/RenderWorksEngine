@@ -12,7 +12,7 @@ workspace "RenderWorksEngine"
 
 	-- Include directories relative to root folder (solution directory)
 	IncludeDir = {}
-	IncludeDir["glfw"] = "RenderWorksEngine/tplibs/glfw/include"
+	IncludeDir["GLFW"] = "RenderWorksEngine/tplibs/glfw/include"
 
 	include "RenderWorksEngine/tplibs/glfw"
 
@@ -37,12 +37,12 @@ workspace "RenderWorksEngine"
 		{
 			"%{prj.name}/source",
 			"%{prj.name}/tplibs/spdlog/include",
-			"%{IncludeDir.glfw}",
+			"%{IncludeDir.GLFW}",
 		}
 
 		links
 		{
-			"glfw",
+			"GLFW",
 			"opengl32.lib",
 		}
 
@@ -55,7 +55,6 @@ workspace "RenderWorksEngine"
 			{
 				"RWE_PLATFORM_WINDOWS",
 				"RWE_BUILD_DLL",
-				--"WIN_DLL",
 			}
 
 			postbuildcommands
@@ -64,39 +63,19 @@ workspace "RenderWorksEngine"
 			}
 
 		filter "configurations:Debug"
-			defines
-			{
-				"RWE_DEBUG",
-				"_DEBUG",
-				"_CONSOLE",
-				"RWE_ENABLE_ASSERTS",
-			}
-			runtime "Debug"
-			symbols "on"
+		defines "RWE_DEBUG"
+		buildoptions "/MDd"
+		symbols "On"
 
-		filter "configurations:Release"
-			defines
-			{
-				"RWE_RELEASE",
-				"NDEBUG",
-				"_CONSOLE",
-			}
-			runtime "Release"
-			optimize "on"
+	filter "configurations:Release"
+		defines "RWE_RELEASE"
+		buildoptions "/MD"
+		optimize "On"
 
-		filter "configurations:Dist"
-			defines
-			{
-				"RWE_DIST",
-				"NDEBUG",
-				--"_CONSOLE",
-			}
-			runtime "Release"
-			optimize "on"
-
-		--[[filters { "system:windows", "configurations:release" }
-			buildoptions "/MT"]]--
-
+	filter "configurations:Dist"
+		defines "RWE_DIST"
+		buildoptions "/MD"
+		optimize "On"
 
 	project "RWEGame"
 		location "RWEGame"
@@ -131,32 +110,19 @@ workspace "RenderWorksEngine"
 			defines
 			{
 				"RWE_PLATFORM_WINDOWS",
-				--"WIN_DLL",
 			}
 
 		filter "configurations:Debug"
-			defines
-			{
-				"RWE_DEBUG",
-				"_DEBUG",
-				"_CONSOLE",
-			}
+			defines "RWE_DEBUG"
+			buildoptions "/MDd"
 			symbols "On"
 
 		filter "configurations:Release"
-			defines
-			{
-				"RWE_RELEASE",
-				"NDEBUG",
-				"_CONSOLE",
-			}
+			defines "RWE_RELEASE"
+			buildoptions "/MD"
 			optimize "On"
 
 		filter "configurations:Dist"
-			defines
-			{
-				"RWE_DIST",
-				"NDEBUG",
-				--"_CONSOLE",
-			}
+			defines "RWE_DIST"
+			buildoptions "/MD"
 			optimize "On"

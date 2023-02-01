@@ -1,5 +1,6 @@
 #pragma once
 
+#include "rwepch.h"
 #include "RWE/Core.h"
 
 namespace RWE
@@ -31,12 +32,7 @@ namespace RWE
 
 	class RWE_API Event
 	{
-		//friend class EventDispatcher;
-	
 	public:
-
-		virtual ~Event() = default;
-
 		bool Handled = false;
 
 		virtual EventType GetEventType() const = 0;
@@ -48,30 +44,23 @@ namespace RWE
 		{
 			return GetCategoryFlags() & category;
 		}
-	
-	protected:
-		//bool m_Handled = false;
 	};
 
 	class EventDispatcher
 	{
-		//template<typename T>
-		//using EventFn = std::function<bool(T&)>;
-
+		template<typename T>
+		using EventFn = std::function<bool(T&)>;
 	public:
 		EventDispatcher(Event& event) : m_Event(event)
 		{
 		}
 
-		//template<typename T>
-		template<typename T, typename F>
-		//bool Dispatch(EventFn<T> func)
-		bool Dispatch(const F& func)
+		template<typename T>
+		bool Dispatch(EventFn<T> func)
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				//m_Event.m_handle = func(*(T*)&m_Event);    //// ORIGINAL LINE
-				m_Event.Handled = func(static_cast<T&>(m_Event));
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

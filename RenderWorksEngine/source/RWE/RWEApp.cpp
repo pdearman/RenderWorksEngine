@@ -1,6 +1,8 @@
 #include "rwepch.h"
 #include "RWEApp.h"
 
+#include "RWE/Log.h"
+
 #include <GLFW/glfw3.h>
 
 namespace RWE
@@ -31,17 +33,14 @@ namespace RWE
 
 	void RWEApp::OnEvent(Event& e)
 	{
-		RWE_CORE_TRACE("Event: {0}", e);
-
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(RWEApp::OnWindowClose));
-		//dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(RWEApp::OnWindowResize));
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 
-		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
 		{
+			(*--it)->OnEvent(e);
 			if (e.Handled)
 				break;
-			(*it)->OnEvent(e);
 		}
 	}
 
@@ -49,8 +48,8 @@ namespace RWE
 	{
 		while (m_Running)
 		{
-			//glClearColor(1, 0, 1, 1);
-			//glClear(GL_COLOR_BUFFER_BIT);
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
