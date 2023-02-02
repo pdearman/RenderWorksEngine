@@ -14,7 +14,7 @@ workspace "RenderWorksEngine"
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "RenderWorksEngine/tplibs/glfw/include"
 	IncludeDir["Glad"] = "RenderWorksEngine/tplibs/glad/include"
-	IncludeDir["ImGui"] = "RenderWorksEngine/tplibs/imgui/include"
+	IncludeDir["ImGui"] = "RenderWorksEngine/tplibs/imgui"
 
 	include "RenderWorksEngine/tplibs/glfw"
 	include "RenderWorksEngine/tplibs/glad"
@@ -26,7 +26,7 @@ workspace "RenderWorksEngine"
 		language "C++"
 
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-		objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 		pchheader "rwepch.h"
 		pchsource "RenderWorksEngine/source/rwepch.cpp"

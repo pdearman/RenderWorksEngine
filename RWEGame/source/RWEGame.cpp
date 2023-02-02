@@ -25,6 +25,7 @@ public:
 		RWEGame()
 		{
 			PushLayer(new ExampleLayer());
+			PushOverlay(new RWE::ImGuiLayer());
 		}
 
 		~RWEGame()

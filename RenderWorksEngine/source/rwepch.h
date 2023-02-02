@@ -18,4 +18,5 @@
 // PLATFORM SPECIFIC
 #ifdef RWE_PLATFORM_WINDOWS
 	#include <Windows.h>
+	#define _CRT_SECURE_NO_WARNINGS
 #endif

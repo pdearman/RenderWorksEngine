@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>rwepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>RWE_PLATFORM_WINDOWS;RWE_BUILD_DLL;GLFW_INCLUDE_NONE;RWE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>source;tplibs\spdlog\include;tplibs\glfw\include;tplibs\glad\include;tplibs\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>source;tplibs\spdlog\include;tplibs\glfw\include;tplibs\glad\include;tplibs\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -103,7 +103,7 @@
       <PrecompiledHeaderFile>rwepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>RWE_PLATFORM_WINDOWS;RWE_BUILD_DLL;GLFW_INCLUDE_NONE;RWE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>source;tplibs\spdlog\include;tplibs\glfw\include;tplibs\glad\include;tplibs\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>source;tplibs\spdlog\include;tplibs\glfw\include;tplibs\glad\include;tplibs\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -130,7 +130,7 @@
       <PrecompiledHeaderFile>rwepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>RWE_PLATFORM_WINDOWS;RWE_BUILD_DLL;GLFW_INCLUDE_NONE;RWE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>source;tplibs\spdlog\include;tplibs\glfw\include;tplibs\glad\include;tplibs\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>source;tplibs\spdlog\include;tplibs\glfw\include;tplibs\glad\include;tplibs\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -152,6 +152,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="source\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="source\Platform\Windows\WinWindow.h" />
     <ClInclude Include="source\RWE\Core.h" />
     <ClInclude Include="source\RWE\Entry.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="source\RWE\Events\Event.h" />
     <ClInclude Include="source\RWE\Events\KeyEvent.h" />
     <ClInclude Include="source\RWE\Events\MouseEvent.h" />
+    <ClInclude Include="source\RWE\ImGui\ImGuiLayer.h" />
     <ClInclude Include="source\RWE\Layer.h" />
     <ClInclude Include="source\RWE\LayerStack.h" />
     <ClInclude Include="source\RWE\Log.h" />
@@ -168,7 +170,9 @@
     <ClInclude Include="source\rwepch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="source\Platform\Windows\WinWindow.cpp" />
+    <ClCompile Include="source\RWE\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="source\RWE\Layer.cpp" />
     <ClCompile Include="source\RWE\LayerStack.cpp" />
     <ClCompile Include="source\RWE\Log.cpp" />
