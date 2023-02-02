@@ -4,3 +4,6 @@
 [submodule "RenderWorksEngine/tplibs/glfw"]
 	path = RenderWorksEngine/tplibs/glfw
 	url = https://github.com/pdearman/glfw
+[submodule "RenderWorksEngine/tplibs/imgui"]
+	path = RenderWorksEngine/tplibs/imgui
+	url = https://github.com/pdearman/imgui

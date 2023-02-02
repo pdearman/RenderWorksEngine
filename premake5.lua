@@ -13,8 +13,10 @@ workspace "RenderWorksEngine"
 	-- Include directories relative to root folder (solution directory)
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "RenderWorksEngine/tplibs/glfw/include"
+	IncludeDir["Glad"] = "RenderWorksEngine/tplibs/glad/include"
 
 	include "RenderWorksEngine/tplibs/glfw"
+	include "RenderWorksEngine/tplibs/glad"
 
 	project "RenderWorksEngine"
 		location "RenderWorksEngine"
@@ -38,11 +40,13 @@ workspace "RenderWorksEngine"
 			"%{prj.name}/source",
 			"%{prj.name}/tplibs/spdlog/include",
 			"%{IncludeDir.GLFW}",
+			"%{IncludeDir.Glad}",
 		}
 
 		links
 		{
 			"GLFW",
+			"Glad",
 			"opengl32.lib",
 		}
 
@@ -55,6 +59,7 @@ workspace "RenderWorksEngine"
 			{
 				"RWE_PLATFORM_WINDOWS",
 				"RWE_BUILD_DLL",
+				"GLFW_INCLUDE_NONE",
 			}
 
 			postbuildcommands
