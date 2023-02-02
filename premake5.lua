@@ -24,6 +24,7 @@ workspace "RenderWorksEngine"
 		location "RenderWorksEngine"
 		kind "SharedLib"
 		language "C++"
+		toolset "msc-v142"
 
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -90,6 +91,7 @@ workspace "RenderWorksEngine"
 		location "RWEGame"
 		kind "ConsoleApp"
 		language "C++"
+		toolset "msc-v142"
 
 		targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 		objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
