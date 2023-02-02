@@ -14,9 +14,11 @@ workspace "RenderWorksEngine"
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "RenderWorksEngine/tplibs/glfw/include"
 	IncludeDir["Glad"] = "RenderWorksEngine/tplibs/glad/include"
+	IncludeDir["ImGui"] = "RenderWorksEngine/tplibs/imgui/include"
 
 	include "RenderWorksEngine/tplibs/glfw"
 	include "RenderWorksEngine/tplibs/glad"
+	include "RenderWorksEngine/tplibs/imgui"
 
 	project "RenderWorksEngine"
 		location "RenderWorksEngine"
@@ -41,12 +43,14 @@ workspace "RenderWorksEngine"
 			"%{prj.name}/tplibs/spdlog/include",
 			"%{IncludeDir.GLFW}",
 			"%{IncludeDir.Glad}",
+			"%{IncludeDir.ImGui}",
 		}
 
 		links
 		{
 			"GLFW",
 			"Glad",
+			"ImGui",
 			"opengl32.lib",
 		}
 
